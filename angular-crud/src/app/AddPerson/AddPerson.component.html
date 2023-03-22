@@ -1,0 +1,51 @@
+<div mat-dialog>
+  <h1 mat-dialog-title>Add new Person</h1>
+  <div mat-dialog-content>
+    <mat-form-field appearance="outline">
+      <mat-label>Person Name</mat-label>
+      <input matInput />
+      <mat-icon matSuffix>person_add</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Domaine</mat-label>
+      <mat-select placeholder="chose domaine">
+        <mat-option *ngFor="let item of domaines">{{ item }}</mat-option>
+      </mat-select>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Chose a date</mat-label>
+      <input matInput [matDatepicker]="picker" />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+    <div>
+      <label for="">
+        <h1>Person</h1>
+      </label>
+    </div>
+    <mat-radio-group class="mat-radio-group-spacing">
+      <mat-radio-button
+        *ngFor="let level of levels"
+        [value]="level"
+        class="mat-radio-button-spacing"
+        >{{ level }}
+      </mat-radio-button>
+    </mat-radio-group>
+    <mat-form-field appearance="outline">
+      <mat-label>Salaire</mat-label>
+      <input matInput type="number" />
+      <mat-icon matSuffix>attach_money</mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Comment</mat-label>
+      <textarea matInput></textarea>
+    </mat-form-field>
+  </div>
+</div>
+<div mat-dialog-action [align]="'end'" class="mat-button-space">
+  <button mat-raised-button color="primary">Save</button>
+  <button mat-raised-button color="warn" mat-dialog-close>Close</button>
+</div>

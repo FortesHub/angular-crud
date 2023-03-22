@@ -1,0 +1,19 @@
+mat-form-field {
+  width: 100%;
+  padding-top: 1.8%;
+}
+.mat-radio-group-spacing {
+  display: flex;
+  flex-direction: column;
+  margin: 15px 0;
+  align-items: flex-start;
+}
+
+.mat-radio-button-spacing {
+  margin: 5px;
+}
+.mat-button-space button + button{
+  margin-left: 8px;
+}
+
+
