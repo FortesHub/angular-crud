@@ -1,6 +1,7 @@
 import { Level } from './../model/level';
 import { Component, OnInit } from '@angular/core';
 import { Domaine } from '../model/domaine';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-AddPerson',
@@ -8,18 +9,23 @@ import { Domaine } from '../model/domaine';
   styleUrls: ['./AddPerson.component.scss'],
 })
 export class AddPersonComponent implements OnInit {
-  domaines: Domaine[] = [
-    Domaine.QA,
-    Domaine.FRONTEND,
-    Domaine.BACKEND
-  ];
-  levels: Level[] = [
-    Level.NEW,
-    Level.JUNIOR,
-    Level.SENIOR
-  ];
+  domaines: Domaine[] = [Domaine.QA, Domaine.FRONTEND, Domaine.BACKEND];
+  levels: Level[] = [Level.NEW, Level.JUNIOR, Level.SENIOR];
+  personForm!: FormGroup;
+  constructor(private formBuilder: FormBuilder) {}
 
-  constructor() {}
+  ngOnInit(): void {
+    this.personForm = this.formBuilder.group({
+      personName: ['', Validators.required],
+      domaine: ['', Validators.required],
+      date : ['',Validators.required],
+      level : ['',Validators.required],
+      salaire : ['',Validators.required],
+      comment : ['',Validators.required]
+    });
+  }
 
-  ngOnInit() {}
+  addPerson(){
+    console.log(this.personForm.value);
+  }
 }

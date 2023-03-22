@@ -11,6 +11,7 @@ import { MatNativeDateModule } from '@angular/material/core';
 import { MatMomentDateModule } from '@angular/material-moment-adapter';
 import { MatRadioModule } from '@angular/material/radio';
 import { MatButtonModule } from '@angular/material/button';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -24,7 +25,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatNativeDateModule,
     MatMomentDateModule,
     MatRadioModule,
-    MatButtonModule
+    MatButtonModule,
+    ReactiveFormsModule,
+    FormsModule
 ],
   exports: [AddPersonComponent],
   declarations: [AddPersonComponent],
