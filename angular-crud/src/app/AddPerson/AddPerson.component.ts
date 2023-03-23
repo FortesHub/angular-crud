@@ -40,11 +40,11 @@ export class AddPersonComponent implements OnInit {
     this.api.addPerson(this.personForm.value)
     .subscribe({
       next:(res)=>{
-        this.messageService.success('Product added successfully');
+        this.messageService.success('Person added successfully');
         this.personForm.setValue(res);
       },
       error:()=>{
-       this.messageService.error('Error while adding the product');
+       this.messageService.error('Error while adding the person');
       }
     })
    }
